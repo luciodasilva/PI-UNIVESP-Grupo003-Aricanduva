@@ -1,0 +1,41 @@
+<div class="container topo">
+  <div class="card" style="width: 35rem;">
+    <div class="card-header">
+      Detalhes do Produto: <strong> {{produto.nome}} </strong>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Nome: {{produto.nome}}</li>
+      <li class="list-group-item">Descrição: {{produto.descProd}}</li>
+      <li class="list-group-item">Quantidade Atual: {{produto.qtdAtual}}</li>
+      <li class="list-group-item">Data Cadastro: {{produto.dataCad | mask:"d0/M0/0000"}}</li>
+      <li class="list-group-item">Data Saida: {{produto.dataSaida | mask:"d0/M0/0000"}}</li>
+    </ul>
+  </div>
+  <br>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-mb-6">
+        <input type="text" class="form-control" [(ngModel)]="qtdAtual">
+      </div>
+      <div class="col-mb-3">
+        <button type="button" class="btn btn-primary btnUpdate" (click)="editarValor()">Adicionar Item</button>
+      </div>
+    </div>
+
+    <div class="row btnRemove">
+      <div class="col-mb-6">
+        <input type="text" class="form-control" [(ngModel)]="removeQuanti">
+      </div>
+
+      <div class="col-mb-3">
+        <button type="button" class="btn btn-danger btnUpdate" (click)="removeQuantidade()">Remover Item</button>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary goBack" (click)="goBack()">Voltar</button>
+    </div>
+
+  </div>
+</div>
